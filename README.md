@@ -9,7 +9,7 @@
 </p>
 <div align="center">
   <h1>
-    Clerk and Next.js App Router Quickstart 
+    Clerk, Fauna, and Next.js App Router Demo
   </h1>  
   <a href="https://www.npmjs.com/package/@clerk/clerk-js">
     <img alt="Downloads" src="https://img.shields.io/npm/dm/@clerk/clerk-js" />
@@ -27,47 +27,50 @@
 
 ## Introduction
 
-Clerk is a developer-first authentication and user management solution. It provides pre-built React components and hooks for sign-in, sign-up, user profile, and organization management. Clerk is designed to be easy to use and customize, and can be dropped into any React or Next.js application.
+[Clerk](https://clerk.com/) is a developer-first authentication and user management solution. It provides pre-built React components and hooks for sign-in, sign-up, user profile, and organization management. Clerk is designed to be easy to use and customize, and can be dropped into any React or Next.js application.
 
-After following the quickstart you'll have learned how to:
+[Fauna](https://fauna.com/) is a distributed document-relational database that combines the flexibility of documents with the power of a relational, ACID compliant database that scales across regions, clouds or the globe.
 
-- Install `@clerk/nextjs`
-- Setup your environment keys
-- Wrap your Next.js app in `<ClerkProvider />`
-- Limit access to authenticated users using Next.js middleware
-- Embed the `<UserButton />`
+Integrating Fauna with Clerk gives you the benefits of using a Fauna database while leveraging Clerk's authentication, prebuilt components, and webhooks.
+
+After following [the Clerk + Fauna integration guide](https://clerk.com/docs/integrations/databases/fauna), you will have learned how to:
+  - Configure Fauna to accept JWTs from Clerk
+  - Create a JWT template in Clerk to generate Fauna JWTs
+  - Use the Fauna JWTs to authenticate Fauna queries in your Next.js app
 
 ## Deploy
 
 Easily deploy the template to Vercel with the button below. You will need to set the required environment variables in the Vercel dashboard.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fclerkinc%2Fclerk-nextjs-app-quickstart&env=NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,CLERK_SECRET_KEY&envDescription=Clerk%20API%20keys&envLink=https%3A%2F%2Fclerk.com%2Fdocs%2Fquickstart%2Fnextjs&redirect-url=https%3A%2F%2Fclerk.com%2Fdocs%2Fquickstart%2Fnextjs)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fclerk%2Fclerk-fauna-nextjs&env=NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,CLERK_SECRET_KEY,NEXT_PUBLIC_CLERK_FRONTEND_API_URL,NEXT_PUBLIC_CLERK_JWKS_URL&envDescription=Clerk%20API%20keys&envLink=https%3A%2F%2Fclerk.com%2Fdocs%2Fdatabases%2Fintegrations%2Ffauna&redirect-url=https%3A%2F%2Fclerk.com%2Fdocs%2Fdatabases%2Fintegrations%2Ffauna)
 
 ## Running the template
 
 ```bash
-git clone https://github.com/clerkinc/clerk-nextjs-app-quickstart
+git clone https://github.com/clerk/clerk-fauna-nextjs
 ```
 
 To run the example locally, you need to:
 
-1. Sign up for a Clerk account at [https://clerk.com](https://dashboard.clerk.com/sign-up?utm_source=DevRel&utm_medium=docs&utm_campaign=templates&utm_content=10-24-2023&utm_term=clerk-nextjs-app-quickstart).
+1. Sign up for a Clerk account at [https://clerk.com](https://dashboard.clerk.com/sign-up?utm_source=DevRel&utm_medium=docs&utm_campaign=templates&utm_content=clerk-fauna-nextjs).
 
-2. Go to the [Clerk dashboard](https://dashboard.clerk.com?utm_source=DevRel&utm_medium=docs&utm_campaign=templates&utm_content=10-24-2023&utm_term=clerk-nextjs-app-quickstart) and create an application.
+2. Go to the [Clerk dashboard](https://dashboard.clerk.com?utm_source=DevRel&utm_medium=docs&utm_campaign=templates&utm_content=clerk-fauna-nextjs) and create an application.
 
-3. Set the required Clerk environment variables as shown in [the example `env` file](./.env.local.example).
+3. Set the required Clerk environment variables as shown in [the example `env.local.example` file](./.env.local.example).
 
 4. `npm install` the required dependencies.
 
-5. `npm run dev` to launch the development server.
+5. Follow [the Clerk + Fauna integration guide](https://clerk.com/docs/integrations/databases/fauna) to set up your Fauna database.
+
+6. `npm run dev` to launch the development server.
 
 ## Learn more
 
 To learn more about Clerk and Next.js, check out the following resources:
 
-- [Quickstart: Get started with Next.js and Clerk](https://clerk.com/docs/quickstarts/nextjs?utm_source=DevRel&utm_medium=docs&utm_campaign=templates&utm_content=10-24-2023&utm_term=clerk-nextjs-app-quickstart)
+- [Quickstart: Get started with Next.js and Clerk](https://clerk.com/docs/quickstarts/nextjs?utm_source=DevRel&utm_medium=docs&utm_campaign=templates&utm_content=clerk-fauna-nextjs)
 
-- [Clerk Documentation](https://clerk.com/docs?utm_source=DevRel&utm_medium=docs&utm_campaign=templates&utm_content=10-24-2023&utm_term=clerk-nextjs-app-quickstart)
+- [Clerk Documentation](https://clerk.com/docs?utm_source=DevRel&utm_medium=docs&utm_campaign=templates&utm_content=clerk-fauna-nextjs)
 - [Next.js Documentation](https://nextjs.org/docs)
 
 ## Found an issue or want to leave feedback
